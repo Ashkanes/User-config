@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-new-account',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewAccountComponent implements OnInit {
 
+  @ViewChild('accountName',{static: false}) accountName:ElementRef;
+  @ViewChild('status',{static: false}) status:ElementRef;
+  @Output() accountAdded:EventEmitter<{name:string, status:string}> = new EventEmitter<{name:string, status:string}>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onCreateAccount(){
+    console.log(this.accountName);
+    this.accountAdded.emit({name:this.accountName.nativeElement.value,status:this.status.nativeElement.value});
   }
 
 }

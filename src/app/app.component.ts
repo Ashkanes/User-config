@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'User-config';
+  accounts=[
+    {name:"adminstative", status:'فعال'},
+    {name:'tarannom',status:'نامشخص'},
+    {name:'reza', status:'غیرفعال'}
+  ];
+
+  onAccountAdded(newAccount:{name:string,status:string}){
+    this.accounts.push(newAccount);
+  }
 }
