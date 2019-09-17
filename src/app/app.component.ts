@@ -15,4 +15,8 @@ export class AppComponent {
   onAccountAdded(newAccount:{name:string,status:string}){
     this.accounts.push(newAccount);
   }
+
+  onAccountSet(event){
+    this.accounts[event.id].status=event.status;
+  }
 }

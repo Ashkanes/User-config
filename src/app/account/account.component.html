@@ -3,8 +3,8 @@
         <h5>{{account.name}}</h5>
         <hr>
         <p>  وضعیت این حساب کاربری {{account.status}}</p>
-        <button class="btn btn-success mr">تبدیل به فعال </button>
-        <button class="btn btn-warning mr">تبدیل به نامشخص</button>
-        <button class="btn btn-danger mr">تبدیل به غیرفعال</button>
+        <button class="btn btn-success mr" (click)="onSetTo('فعال')">تبدیل به فعال </button>
+        <button class="btn btn-warning mr" (click)="onSetTo('نامشخص')">تبدیل به نامشخص</button>
+        <button class="btn btn-danger mr" (click)="onSetTo('غیرفعال')">تبدیل به غیرفعال</button>
     </div>
 </div>
